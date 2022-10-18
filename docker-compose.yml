@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   ui:
@@ -22,7 +22,7 @@ services:
     environment:
       INFURA_KEY: $INFURA_KEY
       GITHUB_TOKEN: $GITHUB_TOKEN
-      CHAINLOG_REPO: "makerdao/chainlog-ui"
+      CHAINLOG_REPO: "gsu-protocol/chainlog-ui"
       PYTHONUNBUFFERED: 1
     volumes:
       - ./api:/usr/app/src/api
