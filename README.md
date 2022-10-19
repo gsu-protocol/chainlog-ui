@@ -36,4 +36,6 @@ docker logs -f chainlog-checksum
 docker-compose down
 ```
 
-**Note:** nginx.conf.template is being customized with the path `/checksum` and copied into the `chainlog-ui` container, for sending traffic to the container running the `checksum.py` script.
+**Note 1:** nginx.conf.template is being customized with the path `/checksum` and copied into the `chainlog-ui` container, for sending traffic to the container running the `checksum.py` script.
+**Note 2:**
+you can update the addresses by looking at this commit https://github.com/block360/chainlog-ui/commit/71f2591b5d5b82e3b33e5a2d1347a1ef7a4e72af
