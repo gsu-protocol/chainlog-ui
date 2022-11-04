@@ -2,9 +2,9 @@
 
 UI and API for GSU Protocol’s chainlog contract
 
-- [chainlog.gsuprotocol.io](https://chainlog.gsuprotocol.io)
-- [chainlog.gsuprotocol.io/api.html](https://chainlog.gsuprotocol.io/api.html)
-- chainlog.gsuprotocol.io/checksum/\<address\>
+- [chainlog-beta.gsuprotocol.io](https://chainlog-beta.gsuprotocol.io)
+- [chainlog-beta.gsuprotocol.io/api.html](https://chainlog-beta.gsuprotocol.io/api.html)
+- chainlog-beta.gsuprotocol.io/checksum/\<address\>
 
 ## Test locally with Docker
 
