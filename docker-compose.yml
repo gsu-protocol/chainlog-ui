@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   ui:
@@ -9,6 +9,8 @@ services:
     container_name: chainlog-ui
     environment:
       CHECKSUM_CONTAINER_NAME: checksum
+    networks:
+      - chainlog-ui-network
     ports:
       - "0.0.0.0:8080:80/tcp"
     volumes:
@@ -22,8 +24,10 @@ services:
     environment:
       INFURA_KEY: $INFURA_KEY
       GITHUB_TOKEN: $GITHUB_TOKEN
-      CHAINLOG_REPO: "makerdao/chainlog-ui"
+      CHAINLOG_REPO: "gsu-protocol/chainlog-ui"
       PYTHONUNBUFFERED: 1
+    networks:
+      - chainlog-ui-network
     volumes:
       - ./api:/usr/app/src/api
   checksum:
@@ -32,5 +36,10 @@ services:
       dockerfile: Dockerfile.checksum
     image: chainlog-checksum
     container_name: chainlog-checksum
-    environment:
-      PYTHONUNBUFFERED: 1s
+    networks:
+      - chainlog-ui-network
+
+networks:
+  chainlog-ui-network:
+    name: chainlog-ui-network
+    driver: bridge

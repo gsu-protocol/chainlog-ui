@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Chainlog historical API - MakerDAO</title>
+        <title>Chainlog historical API - GSU Protocol</title>
         <meta charset="UTF-8">
         <meta name="referrer" content="origin">
         <link rel="icon" href="data:;base64,iVBORw0KGgo=">
@@ -10,22 +10,22 @@
         <h1>Chainlog historical API</h1>
         <h2>Usage</h2>
         <h3>Get a list of all available chains and versions</h3>
-        <pre>GET <a href="https://chainlog.makerdao.com/api/index.json">https://chainlog.makerdao.com/api/index.json</a></pre>
+        <pre>GET <a href="https://chainlog-beta.gsuprotocol.io/api/index.json">https://chainlog-beta.gsuprotocol.io/api/index.json</a></pre>
         <h3>Get the active version on a given chain</h3>
-        <pre>GET https://chainlog.makerdao.com/api/{chain}/active.json</pre>
+        <pre>GET https://chainlog-beta.gsuprotocol.io/api/{chain}/active.json</pre>
         <h3>Get a specific version on a given chain</h3>
-        <pre>GET https://chainlog.makerdao.com/api/{chain}/{version}.json</pre>
+        <pre>GET https://chainlog-beta.gsuprotocol.io/api/{chain}/{version}.json</pre>
         <h2>Code examples</h2>
-        You can set your JavaScript app to use this API <a href="https://github.com/makerdao/chainlog-ui/blob/main/examples/api.js">in the following way</a>:
+        You can set your JavaScript app to use this API <a href="https://github.com/gsu-protocol/chainlog-ui/blob/main/examples/api.js">in the following way</a>:
         <pre>
-  const url = "https://chainlog.makerdao.com/api/mainnet/active.json";
+  const url = "https://chainlog-beta.gsuprotocol.io/api/mainnet/active.json";
   const response = await fetch(url);
   const chainlog = await response.json();
   console.log(chainlog);
         </pre>
-        If you care about decentralization, however, <b>do not use this API</b>. Instead <a href="https://github.com/makerdao/chainlog-ui/blob/main/examples/ethers.js">query the blockchain directly</a>:
+        If you care about decentralization, however, <b>do not use this API</b>. Instead <a href="https://github.com/gsu-protocol/chainlog-ui/blob/main/examples/ethers.js">query the blockchain directly</a>:
         <pre>
-  const address = "0xda0ab1e0017debcd72be8599041a2aa3ba7e740f";
+  const address = "0xBCe4D2D8595f65ce6c8b09582b83d49Ee0f287Da";
   const abi = [
     "function list() external view returns (bytes32[])",
     "function getAddress(bytes32) external view returns (address)"
@@ -42,13 +42,13 @@
   console.log(result);
         </pre>
         Please note that the above code will only retreive the latest data.<br/><br/>
-        You can also ditch web3 libraries and perform low-level JSON RPC calls. Here is an <a href="https://github.com/makerdao/chainlog-ui/blob/main/examples/python.py">example with Python</a>:
+        You can also ditch web3 libraries and perform low-level JSON RPC calls. Here is an <a href="https://github.com/gsu-protocol/chainlog-ui/blob/main/examples/python.py">example with Python</a>:
         <pre>
   keys = requests.post("https://mainnet.infura.io/v3/" + infura_key, json={
       "jsonrpc": "2.0",
       "method": "eth_call",
       "params": [{
-          "to": "0xdA0Ab1e0017DEbCd72Be8599041a2aa3bA7e740F",
+          "to": "0xBCe4D2D8595f65ce6c8b09582b83d49Ee0f287Da",
           "data": "0x0f560cd7"
       }, "latest"],
       "id": 0
@@ -59,7 +59,7 @@
           "jsonrpc": "2.0",
           "method": "eth_call",
           "params": [{
-              "to": "0xdA0Ab1e0017DEbCd72Be8599041a2aa3bA7e740F",
+              "to": "0xBCe4D2D8595f65ce6c8b09582b83d49Ee0f287Da",
               "data": "0x21f8a721" + keys[i:i+64]
           }, "latest"],
           "id": 0
@@ -71,8 +71,8 @@
         The above code has the advantage that it will allow you to retreive historical data as long as you are using an archival node. In order to do that, replace <code>"latest"</code> with a specific block number.
         <h2>Available resources in this API</h2>
         <pre>
-https://chainlog.makerdao.com/api
-├── <a href="https://chainlog.makerdao.com/api/index.json">index.json</a>
+https://chainlog-beta.gsuprotocol.io/api
+├── <a href="https://chainlog-beta.gsuprotocol.io/api/index.json">index.json</a>
 <div id="canvas"></div>
         </pre>
         <script>

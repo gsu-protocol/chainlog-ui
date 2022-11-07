@@ -7,7 +7,7 @@ keys = requests.post("https://mainnet.infura.io/v3/" + infura_key, json={
     "jsonrpc": "2.0",
     "method": "eth_call",
     "params": [{
-        "to": "0xdA0Ab1e0017DEbCd72Be8599041a2aa3bA7e740F",
+        "to": "0xBCe4D2D8595f65ce6c8b09582b83d49Ee0f287Da",
         "data": "0x0f560cd7"
     }, "latest"],
     "id": 0
@@ -18,7 +18,7 @@ for i in range(0, len(keys), 64):
         "jsonrpc": "2.0",
         "method": "eth_call",
         "params": [{
-            "to": "0xdA0Ab1e0017DEbCd72Be8599041a2aa3bA7e740F",
+            "to": "0xBCe4D2D8595f65ce6c8b09582b83d49Ee0f287Da",
             "data": "0x21f8a721" + keys[i:i+64]
         }, "latest"],
         "id": 0
